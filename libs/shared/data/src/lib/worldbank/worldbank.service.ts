@@ -16,9 +16,10 @@ export class WorldbankService {
 
   public getRegions(lang = 'es'): Observable<any>{
     const URL_REGIONS_REQUEST = `${this.apiWorldBank}${lang}/region/?format=json`;
-    // @ts-ignore
+
     return this.http.get(URL_REGIONS_REQUEST)
       .pipe(
+        // @ts-ignore
         map(([metadata, regions]) => regions.filter(item => item['id'])),
       )
   }
