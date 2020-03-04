@@ -17,6 +17,15 @@
     "worldbank-e2e": {
       "tags": [],
       "implicitDependencies": ["worldbank"]
+    },
+    "shared-domain": {
+      "tags": []
+    },
+    "shared-ui": {
+      "tags": []
+    },
+    "shared-data": {
+      "tags": []
     }
   }
 }

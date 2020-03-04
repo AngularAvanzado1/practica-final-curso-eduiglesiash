@@ -15,7 +15,11 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@wb-domain": ["libs/shared/domain/src/index.ts"],
+      "@wb-ui": ["libs/shared/ui/src/index.ts"],
+      "@wb-data": ["libs/shared/data/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

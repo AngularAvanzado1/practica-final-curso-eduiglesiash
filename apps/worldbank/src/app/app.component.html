@@ -1,2 +1,24 @@
 <h1>{{ title }}</h1>
+
+<section *ngIf="regions">
+  <table>
+    <caption>Tabla de regiones de World Bank</caption>
+    <thead>
+    <tr>
+      <th>id</th>
+      <th>code</th>
+      <th>iso2code</th>
+      <th>name</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let region of regions">
+      <td>{{region.id}}</td>
+      <td>{{region.code}}</td>
+      <td>{{region.iso2code}}</td>
+      <td>{{region.name}}</td>
+    </tr>
+    </tbody>
+  </table>
+</section>
 <router-outlet></router-outlet>
