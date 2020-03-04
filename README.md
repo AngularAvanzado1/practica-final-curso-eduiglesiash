@@ -11,7 +11,7 @@ Explorar la información abierta y disponible en el [API del Banco Mundial](http
 
 - [ DONE ] A partir de : http://api.worldbank.org/v2/region/?format=json
 
-- Filtrando para ver aquellas que tengan `id` numérico
+- [ DONE ] Filtrando para ver aquellas que tengan `id` numérico
 
 - Navegar hacia la página de una región: `region/:code`
 

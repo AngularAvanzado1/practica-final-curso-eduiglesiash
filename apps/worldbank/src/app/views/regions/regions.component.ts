@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Region } from '@wb-domain';
 import { WorldbankService } from '@wb-data';
 
+
 @Component({
   selector: 'wb-regions',
   templateUrl: './regions.component.html',
@@ -19,11 +20,11 @@ export class RegionsComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.regions$ = this.wbService.getRegions()
-      .subscribe(response => this.regions = response[1]);
+      .subscribe(response => this.regions = response);
   }
 
 
-  ngOnDestroy(){
+  ngOnDestroy() {
     this.regions$.unsubscribe();
   }
 }

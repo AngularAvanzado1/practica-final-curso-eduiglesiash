@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { filter, last, map, tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,10 @@ export class WorldbankService {
 
   public getRegions(lang = 'es'): Observable<any>{
     const URL_REGIONS_REQUEST = `${this.apiWorldBank}${lang}/region/?format=json`;
-    return this.http.get(URL_REGIONS_REQUEST);
+    return this.http.get(URL_REGIONS_REQUEST)
+      .pipe(
+        map((data) => data[1].filter(item => item['id'])),
+      )
   }
 
 }
