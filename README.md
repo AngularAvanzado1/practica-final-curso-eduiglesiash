@@ -13,13 +13,13 @@ Explorar la información abierta y disponible en el [API del Banco Mundial](http
 
 - [ DONE ] Filtrando para ver aquellas que tengan `id` numérico
 
-- Navegar hacia la página de una región: `region/:code`
+- [ DONE ] Navegar hacia la página de una región: `region/:code`
 
 ### Página para una región continental [WIP]
 
-- Ver los datos básicos del continente y los países pertenecientes.
+- [ DONE ] Ver los datos básicos del continente y los países pertenecientes.
 
-- A partir de : http://api.worldbank.org/v2/region/ECS/country?per_page=1000&format=json
+- [ DONE ] A partir de : http://api.worldbank.org/v2/region/ECS/country?per_page=1000&format=json
 
 - Navegar hacia la página de un país: `country/:id`
 

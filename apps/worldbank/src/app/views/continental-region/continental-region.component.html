@@ -1,1 +1,10 @@
-<p>continental-region works!</p>
+<h2>Continental Regions</h2>
+<nav>
+  <a [routerLink]="['/']">Go to Regions</a>
+</nav>
+<section>
+  Data of region:  {{ codeContinentalRegion }}
+  <div *ngIf="dataCountries$ | async as countries">
+    {{ countries | json}}
+  </div>
+</section>

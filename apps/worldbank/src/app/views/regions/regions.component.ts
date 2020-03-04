@@ -1,6 +1,7 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Region } from '@wb-domain';
+import { Component, OnInit } from '@angular/core';
+import { Regions } from '@wb-domain';
 import { WorldbankService } from '@wb-data';
+import { Observable } from 'rxjs';
 
 
 @Component({
@@ -8,10 +9,9 @@ import { WorldbankService } from '@wb-data';
   templateUrl: './regions.component.html',
   styleUrls: ['./regions.component.css']
 })
-export class RegionsComponent implements OnInit, OnDestroy {
+export class RegionsComponent implements OnInit {
 
-  public regions: Region[];
-  private regions$;
+  private regions$: Observable<Regions[]>;
 
   constructor(
     private wbService: WorldbankService
@@ -20,11 +20,6 @@ export class RegionsComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.regions$ = this.wbService.getRegions()
-      .subscribe(response => this.regions = response);
   }
 
-
-  ngOnDestroy() {
-    this.regions$.unsubscribe();
-  }
 }

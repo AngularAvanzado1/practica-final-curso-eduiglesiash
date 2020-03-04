@@ -1,21 +1,23 @@
-<section *ngIf="regions">
-  <table>
-    <caption>Tabla de regiones de World Bank</caption>
-    <thead>
-    <tr>
-      <th>id</th>
-      <th>code</th>
-      <th>iso2code</th>
-      <th>name</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let region of regions">
-      <td>{{region.id}}</td>
-      <td>{{region.code}}</td>
-      <td>{{region.iso2code}}</td>
-      <td>{{region.name}}</td>
-    </tr>
-    </tbody>
-  </table>
-</section>
+<h2>Regions</h2>
+
+<table *ngIf="regions$ | async as regions">
+  <caption>Tabla de regiones de World Bank</caption>
+  <thead>
+  <tr>
+    <th>id</th>
+    <th>code</th>
+    <th>iso2code</th>
+    <th>name</th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let region of regions">
+    <td>{{region.id}}</td>
+    <td>{{region.code}}</td>
+    <td>{{region.iso2code}}</td>
+    <td>{{region.name}}</td>
+    <td><a [routerLink]="['/continental-region', region.code]">Navigate to</a></td>
+  </tr>
+  </tbody>
+</table>

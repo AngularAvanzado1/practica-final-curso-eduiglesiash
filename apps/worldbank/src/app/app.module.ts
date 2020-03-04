@@ -21,7 +21,7 @@ const MyModules = [
           loadChildren: () => import('./views/regions/regions.module').then(m => m.RegionsModule)
         },
         {
-          path: 'continental-region',
+          path: 'continental-region/:code',
           loadChildren: () => import('./views/continental-region/continental-region.module').then(m => m.ContinentalRegionModule)
         },
         {
