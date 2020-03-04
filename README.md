@@ -7,15 +7,15 @@ Explorar la información abierta y disponible en el [API del Banco Mundial](http
 
 ### Home page
 
-- Ver regiones geográficas continentales:
+- [ DONE ] Ver regiones geográficas continentales:
 
-- A partir de : http://api.worldbank.org/v2/region/?format=json
+- [ DONE ] A partir de : http://api.worldbank.org/v2/region/?format=json
 
 - Filtrando para ver aquellas que tengan `id` numérico
 
 - Navegar hacia la página de una región: `region/:code`
 
-### Página para una región continental
+### Página para una región continental [WIP]
 
 - Ver los datos básicos del continente y los países pertenecientes.
 
@@ -23,7 +23,7 @@ Explorar la información abierta y disponible en el [API del Banco Mundial](http
 
 - Navegar hacia la página de un país: `country/:id`
 
-### Página para un país
+### Página para un país [WIP]
 
 - Ver los datos básicos de un país
 
@@ -37,7 +37,7 @@ Explorar la información abierta y disponible en el [API del Banco Mundial](http
 
 ## Mínimo
 
-- [DONE] Mono repositorio generado con las herramientas de [Nx.dev](https://nx.dev/angular)
+- [ DONE ] Mono repositorio generado con las herramientas de [Nx.dev](https://nx.dev/angular)
 
 - [ DONE ] AL menos una aplicación y una librería
 
