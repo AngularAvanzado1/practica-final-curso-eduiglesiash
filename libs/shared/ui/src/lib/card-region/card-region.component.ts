@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 import { Region } from '@wb-domain';
 
 @Component({
@@ -7,15 +7,10 @@ import { Region } from '@wb-domain';
   styleUrls: ['./card-region.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class CardRegionComponent implements OnInit {
+export class CardRegionComponent {
 
   @Input() public region: Region;
   @Output() public selected: EventEmitter<string> = new EventEmitter();
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
 
   public codeSelected(code:string){
     this.selected.next(code);

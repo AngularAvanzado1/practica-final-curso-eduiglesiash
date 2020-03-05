@@ -45,9 +45,9 @@ Explorar la información abierta y disponible en el [API del Banco Mundial](http
 
 - Testing _e2e_ de una página
 
-- Uso de la estrategia de detección de cambios **_OnPush_**.
+- [ DONE ] Uso de la estrategia de detección de cambios **_OnPush_**.
 
-- Uso del patrón _Container Presenter_.
+- [ DONE ] Uso del patrón _Container Presenter_.
 
 ## Plus
 
@@ -65,3 +65,11 @@ Explorar la información abierta y disponible en el [API del Banco Mundial](http
 
 - Una aplicación web estándar (sin Angular) que use el anterior componente.
 
+
+## TODO's
+
+[] - Crear los interfaces de las continental-regions 
+[] - Crear los interfaces de los paises para mostrar
+[] - Crear las card de los paises como una librería compartida para poder usarla. 
+[] - Importar y ejecutar este componente. 
+[] - Generar el nuevo método para está nueva petición
