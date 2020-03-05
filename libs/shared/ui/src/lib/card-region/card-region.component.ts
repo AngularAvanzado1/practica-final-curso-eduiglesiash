@@ -1,10 +1,11 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Region } from '@wb-domain';
 
 @Component({
   selector: 'wb-ui-card-region',
   templateUrl: './card-region.component.html',
-  styleUrls: ['./card-region.component.css']
+  styleUrls: ['./card-region.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CardRegionComponent implements OnInit {
 

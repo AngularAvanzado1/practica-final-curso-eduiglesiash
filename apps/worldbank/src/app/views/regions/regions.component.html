@@ -4,8 +4,6 @@
     <wb-ui-card-region
       *ngFor="let cardRegion of regions"
       [region]="cardRegion"
-      (selected)="navigateTo($event)"
-    >
+      (selected)="navigateTo($event)">
     </wb-ui-card-region>
 </div>
-
