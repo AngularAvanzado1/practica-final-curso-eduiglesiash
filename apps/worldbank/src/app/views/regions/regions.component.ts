@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Regions } from '@wb-domain';
 import { WorldbankService } from '@wb-data';
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -11,10 +12,11 @@ import { Observable } from 'rxjs';
 })
 export class RegionsComponent implements OnInit {
 
-  private regions$: Observable<Regions[]>;
+  public regions$: Observable<Regions[]>;
 
   constructor(
-    private wbService: WorldbankService
+    private wbService: WorldbankService,
+    private router: Router
   ) {
   }
 
@@ -22,4 +24,8 @@ export class RegionsComponent implements OnInit {
     this.regions$ = this.wbService.getRegions()
   }
 
+  public navigateTo(code: string){
+    console.log(`Navigate TO: ${code}`);
+    this.router.navigate(['/continental-region', code]);
+  }
 }

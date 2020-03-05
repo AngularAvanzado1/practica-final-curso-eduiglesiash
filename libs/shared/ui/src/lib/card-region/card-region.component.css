@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700|Roboto:400,700&display=swap');
+
+:host {
+  font-family: 'Open Sans', sans-serif;
+  display: inline-block;
+  padding: 12px;
+  box-sizing: border-box;
+  border-radius: 6px;
+  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, .3), 0 1px 3px 1px rgba(60, 64, 67, .15);
+  margin: 0 12px 12px 0;
+}
+:host:hover,
+:host:focus-within{
+  cursor: pointer;
+  outline: none;
+  background-color: tomato;
+}
+.card-region:focus{
+  outline: none;
+}
+.card-region__title {
+  margin: 0 0 12px 0;
+  text-decoration: underline;
+}
+
+.card-region__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.card-region__text {
+  margin: 0;
+}
+
+.card-region__text span {
+  font-weight: bold;
+}
+
+.card-region__link {
+  text-decoration: none;
+  color: black;
+}
+
