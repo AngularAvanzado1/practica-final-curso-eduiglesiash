@@ -2,17 +2,17 @@ import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from 
 import { Region } from '@wb-domain';
 
 @Component({
-  selector: 'wb-ui-card-region',
+  selector: 'wb-ui-card',
   templateUrl: './card-region.component.html',
   styleUrls: ['./card-region.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CardRegionComponent {
 
-  @Input() public region: Region;
-  @Output() public selected: EventEmitter<string> = new EventEmitter();
+  @Input() public info: Region;
+  @Output() public infoSelected: EventEmitter<string> = new EventEmitter();
 
-  public codeSelected(code:string){
-    this.selected.next(code);
+  public codeSelected(code: Region){
+    this.infoSelected.next(code);
   }
 }

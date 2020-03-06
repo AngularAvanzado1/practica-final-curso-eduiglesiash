@@ -4,7 +4,7 @@ interface CountriesData {
   value: string;
 }
 
-export interface Countries {
+export interface Country {
   id: string;
   iso2Code: string;
   name: string;

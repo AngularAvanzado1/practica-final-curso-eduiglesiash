@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { Region } from '@wb-domain';
 
 @Injectable({
   providedIn: 'root'
@@ -28,16 +29,23 @@ export class WorldbankService {
     return this.http.get(URL_REGION)
       .pipe(
         // @ts-ignore
-        map(([metadata, region]) => region)
+        map(([metadata, region]) => {
+          const cloneRegion:Region = region[0];
+          return {...cloneRegion};
+        })
       );
   }
 
-  public getContinentalRegions(code: string, lang: string = 'es'): Observable<any> {
+  public getCountries(code: string, lang: string = 'es'): Observable<any> {
     const URL_CONTINENTAL_REGIONS = `${this.apiWorldBank}${lang}/region/${code}/country?per_page=1000&format=json`;
     return this.http.get(URL_CONTINENTAL_REGIONS)
       .pipe(
         // @ts-ignore
-        map(([metadata, countries]) => countries)
+        map(([metadata, countries]) => {
+          const countriesName = countries.filter(item => item.name);
+          console.log(countriesName);
+          return [...countriesName];
+        })
       );
   }
 

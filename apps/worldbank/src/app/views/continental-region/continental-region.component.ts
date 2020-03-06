@@ -22,6 +22,10 @@ export class ContinentalRegionComponent implements OnInit {
   ngOnInit(): void {
     this.codeContinentalRegion = this.route.snapshot.paramMap.get('code');
     this.infoRegion$ = this.wbService.getInfoRegion(this.codeContinentalRegion);
-    this.dataCountries$ = this.wbService.getContinentalRegions(this.codeContinentalRegion);
+    this.dataCountries$ = this.wbService.getCountries(this.codeContinentalRegion);
+  }
+
+  public countrySelected(event) {
+    console.log({event});
   }
 }

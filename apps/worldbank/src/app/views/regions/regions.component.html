@@ -1,9 +1,9 @@
 <h2>Regions</h2>
 
 <div *ngIf="regions$ | async as regions">
-    <wb-ui-card-region
+    <wb-ui-card
       *ngFor="let cardRegion of regions"
-      [region]="cardRegion"
-      (selected)="navigateTo($event)">
-    </wb-ui-card-region>
+      [info]="cardRegion"
+      (infoSelected)="navigateTo($event)">
+    </wb-ui-card>
 </div>
