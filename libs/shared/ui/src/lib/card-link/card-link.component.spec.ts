@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CardRegionComponent } from './card-region.component';
+import { CardLinkComponent } from './card-link.component';
 
-describe('CardRegionComponent', () => {
-  let component: CardRegionComponent;
-  let fixture: ComponentFixture<CardRegionComponent>;
+describe('CardLinkComponent', () => {
+  let component: CardLinkComponent;
+  let fixture: ComponentFixture<CardLinkComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CardRegionComponent ]
+      declarations: [ CardLinkComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CardRegionComponent);
+    fixture = TestBed.createComponent(CardLinkComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

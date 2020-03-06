@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CardRegionComponent } from './card-region/card-region.component';
 import { CardTemplateComponent } from './card-template/card-template.component';
-import { CardCountryComponent } from './card-country/card-country.component';
+import { CardLinkComponent } from './card-link/card-link.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
-  imports: [CommonModule],
-  declarations: [CardRegionComponent, CardTemplateComponent, CardCountryComponent],
-  exports: [CardRegionComponent, CardTemplateComponent, CardCountryComponent]
+  imports: [CommonModule, RouterModule],
+  declarations: [CardTemplateComponent, CardLinkComponent],
+  exports: [CardTemplateComponent, CardLinkComponent]
 })
 export class UiModule {}
