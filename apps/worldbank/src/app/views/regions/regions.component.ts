@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Region, Regions } from '@wb-domain';
+import { Region } from '@wb-domain';
 import { WorldbankService } from '@wb-data';
 import { Observable } from 'rxjs';
-import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -12,21 +12,22 @@ import { Router } from '@angular/router';
 })
 export class RegionsComponent implements OnInit {
 
-  public regions$: Observable<Regions[]>;
+  public codeContinentalRegion: string;
+  public dataCountries$: Observable<any>;
+  public infoRegion$: Observable<Region>;
 
   constructor(
-    private wbService: WorldbankService,
-    private router: Router
-  ) {
+    private route: ActivatedRoute,
+    private wbService: WorldbankService
+  ) { }
+
+  ngOnInit(): void {
+    this.codeContinentalRegion = this.route.snapshot.paramMap.get('code');
+    this.infoRegion$ = this.wbService.getInfoRegion(this.codeContinentalRegion);
+    this.dataCountries$ = this.wbService.getCountries(this.codeContinentalRegion);
   }
 
-  ngOnInit() {
-    this.regions$ = this.wbService.getRegions()
-  }
-
-  public navigateTo(regionSelected: Region){
-    console.log(`Navigate TO:`);
-    console.log(regionSelected);
-    this.router.navigate(['/continental-region', regionSelected]);
+  public countrySelected(event) {
+    console.log({event});
   }
 }

@@ -1,0 +1,10 @@
+<h2>Regions</h2>
+
+<div *ngIf="regions$ | async as regions">
+  <wb-ui-card
+    *ngFor="let cardRegion of regions"
+    [info]="cardRegion"
+    (infoSelected)="navigateTo($event)">
+  </wb-ui-card>
+</div>
+

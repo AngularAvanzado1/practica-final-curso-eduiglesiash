@@ -16,13 +16,14 @@ const MyModules = [
     ...MyModules,
     BrowserModule,
     RouterModule.forRoot([
+
         {
           path: '',
-          loadChildren: () => import('./views/regions/regions.module').then(m => m.RegionsModule)
+          loadChildren: () => import('./views/continental-regions/continental-regions.module').then(m => m.ContinentalRegionsModule)
         },
         {
-          path: 'continental-region/:code',
-          loadChildren: () => import('./views/continental-region/continental-region.module').then(m => m.ContinentalRegionModule)
+          path: 'regions/:code',
+          loadChildren: () => import('./views/regions/regions.module').then(m => m.RegionsModule)
         },
         {
           path: 'country',
