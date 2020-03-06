@@ -23,6 +23,14 @@ export class WorldbankService {
         map(([metadata, regions]) => regions.filter(item => item['id']))
       );
   }
+  public getInfoRegion(code: string, lang:string = 'es'){
+    const URL_REGION = `${this.apiWorldBank}${lang}/region/${code}/?format=json`;
+    return this.http.get(URL_REGION)
+      .pipe(
+        // @ts-ignore
+        map(([metadata, region]) => region)
+      );
+  }
 
   public getContinentalRegions(code: string, lang: string = 'es'): Observable<any> {
     const URL_CONTINENTAL_REGIONS = `${this.apiWorldBank}${lang}/region/${code}/country?per_page=1000&format=json`;

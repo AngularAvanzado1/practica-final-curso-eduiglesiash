@@ -17,9 +17,9 @@ Explorar la información abierta y disponible en el [API del Banco Mundial](http
 
 ### Página para una región continental [WIP]
 
-- [ DONE ] Ver los datos básicos del continente y los países pertenecientes.
+- [ WIP ] Ver los datos básicos del continente y los países pertenecientes.
 
-- [ DONE ] A partir de : http://api.worldbank.org/v2/region/ECS/country?per_page=1000&format=json
+- [ DONE ] A partir de : http://api.worldbank.org/v2/es/region/ECS/country?per_page=1000&format=json
 
 - Navegar hacia la página de un país: `country/:id`
 
@@ -27,7 +27,7 @@ Explorar la información abierta y disponible en el [API del Banco Mundial](http
 
 - Ver los datos básicos de un país
 
-- A partir de : http://api.worldbank.org/V2/country/ESP?format=json
+- A partir de : http://api.worldbank.org/V2/es/country/ESP?format=json
 
 - Navegar hacia su región continental : `region/:code`
 
@@ -68,7 +68,7 @@ Explorar la información abierta y disponible en el [API del Banco Mundial](http
 
 ## TODO's
 
-[] - Crear los interfaces de las continental-regions 
+[x] - Crear los interfaces de las continental-regions 
 [] - Crear los interfaces de los paises para mostrar
 [] - Crear las card de los paises como una librería compartida para poder usarla. 
 [] - Importar y ejecutar este componente. 

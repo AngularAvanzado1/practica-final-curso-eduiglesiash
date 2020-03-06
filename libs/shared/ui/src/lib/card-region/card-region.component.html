@@ -2,16 +2,5 @@
          (click)="codeSelected(region.code)"
          (keydown.enter)="codeSelected(region.code)"
          tabindex="0">
-    <h3 class="card-region__title">{{ region.name}}</h3>
-    <ul class="card-region__list">
-      <li>
-        <p class="card-region__text">Code: <span>{{ region.code }}</span></p>
-      </li>
-      <li>
-        <p class="card-region__text">iso2Code: <span>{{ region.iso2code }}</span></p>
-      </li>
-      <li>
-        <p class="card-region__text">id: <span>{{ region.id }}</span></p>
-      </li>
-    </ul>
+  <wb-ui-card-template [region]="region"></wb-ui-card-template>
 </article>

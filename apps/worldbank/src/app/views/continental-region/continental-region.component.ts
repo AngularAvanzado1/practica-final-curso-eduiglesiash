@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { WorldbankService } from '@wb-data';
 import { Observable } from 'rxjs';
+import { Region } from '@wb-domain';
 
 @Component({
   selector: 'wb-continental-region',
@@ -11,14 +12,16 @@ import { Observable } from 'rxjs';
 export class ContinentalRegionComponent implements OnInit {
 
   public codeContinentalRegion: string;
-  public dataCountries$: Observable<any>
-;  constructor(
+  public dataCountries$: Observable<any>;
+  public infoRegion$: Observable<Region>;
+  constructor(
     private route: ActivatedRoute,
     private wbService: WorldbankService
   ) { }
 
   ngOnInit(): void {
     this.codeContinentalRegion = this.route.snapshot.paramMap.get('code');
-    this.dataCountries$ = this.wbService.getContinentalRegions(this.codeContinentalRegion)
+    this.infoRegion$ = this.wbService.getInfoRegion(this.codeContinentalRegion);
+    this.dataCountries$ = this.wbService.getContinentalRegions(this.codeContinentalRegion);
   }
 }

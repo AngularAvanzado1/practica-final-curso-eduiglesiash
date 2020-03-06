@@ -4,6 +4,9 @@
 </nav>
 <section>
   Data of region:  {{ codeContinentalRegion }}
+  <div *ngIf="infoRegion$ | async as infoRegion">
+
+  </div>
   <div *ngIf="dataCountries$ | async as countries">
     {{ countries | json}}
   </div>

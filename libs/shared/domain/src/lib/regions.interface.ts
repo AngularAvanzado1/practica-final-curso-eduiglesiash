@@ -1,9 +1,9 @@
-import { MetaDataPage } from './metaDataPage.interface';
+import { MetaDataPage } from './metadata-page.interface';
 
 export interface Region {
-  id?: string;
   code: string;
   iso2code: string;
+  id?: string;
   name?: string;
 }
 

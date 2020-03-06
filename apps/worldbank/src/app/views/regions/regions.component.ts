@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Regions } from '@wb-domain';
+import { Region, Regions } from '@wb-domain';
 import { WorldbankService } from '@wb-data';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
@@ -24,8 +24,9 @@ export class RegionsComponent implements OnInit {
     this.regions$ = this.wbService.getRegions()
   }
 
-  public navigateTo(code: string){
-    console.log(`Navigate TO: ${code}`);
-    this.router.navigate(['/continental-region', code]);
+  public navigateTo(regionSelected: Region){
+    console.log(`Navigate TO:`);
+    console.log(regionSelected);
+    this.router.navigate(['/continental-region', regionSelected]);
   }
 }
