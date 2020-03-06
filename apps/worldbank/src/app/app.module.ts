@@ -28,13 +28,7 @@ const MyModules = [
         {
           path: 'country',
           loadChildren: () => import('./views/country/country.module').then(m => m.CountryModule)
-        },
-        {
-          path: '**',
-          pathMatch: 'full',
-          redirectTo: ''
         }
-
       ],
       { initialNavigation: 'enabled' })
   ],

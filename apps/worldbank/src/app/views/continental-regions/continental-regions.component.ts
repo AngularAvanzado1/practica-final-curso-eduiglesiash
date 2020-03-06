@@ -25,7 +25,7 @@ export class ContinentalRegionsComponent implements OnInit {
 
   public navigateTo(regionSelected: Region) {
     console.log(`Navigate TO:`);
-    console.log(regionSelected);
-    this.router.navigate(['/continental-regions', regionSelected]);
+    console.log(regionSelected.code);
+    this.router.navigate(['/regions', regionSelected.code]);
   }
 }
