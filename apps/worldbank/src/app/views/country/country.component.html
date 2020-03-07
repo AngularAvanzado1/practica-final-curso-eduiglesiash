@@ -1,1 +1,7 @@
-<p>country works!</p>
+<nav>
+  <a [routerLink]="['/']">Go to Continental Region</a>
+</nav>
+
+<div *ngIf="country$">
+  {{ country$ | async | json }}
+</div>

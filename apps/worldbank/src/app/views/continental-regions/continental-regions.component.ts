@@ -11,11 +11,10 @@ import { Region, Regions } from '@wb-domain';
 })
 export class ContinentalRegionsComponent implements OnInit {
 
-  public regions$: Observable<Regions[]>;
+  public regions$: Observable<Region[]>;
 
   constructor(
     private wbService: WorldbankService,
-    private router: Router
   ) {
   }
 
@@ -23,9 +22,4 @@ export class ContinentalRegionsComponent implements OnInit {
     this.regions$ = this.wbService.getRegions();
   }
 
-  public navigateTo(regionSelected: Region) {
-    console.log(`Navigate TO:`);
-    console.log(regionSelected.code);
-    this.router.navigate(['/regions', regionSelected.code]);
-  }
 }

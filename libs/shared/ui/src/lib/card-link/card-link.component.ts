@@ -1,10 +1,11 @@
-import { Component, Input, Output} from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { Region } from '@wb-domain';
 
 @Component({
   selector: 'wb-ui-card-link',
   templateUrl: './card-link.component.html',
-  styleUrls: ['./card-link.component.css']
+  styleUrls: ['./card-link.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CardLinkComponent {
 

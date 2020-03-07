@@ -22,12 +22,17 @@ const MyModules = [
           loadChildren: () => import('./views/continental-regions/continental-regions.module').then(m => m.ContinentalRegionsModule)
         },
         {
-          path: 'region/:code',
-          loadChildren: () => import('./views/regions/regions.module').then(m => m.RegionsModule)
+          path: 'region/:id',
+          loadChildren: () => import('./views/region/region.module').then(m => m.RegionModule)
         },
         {
-          path: 'country',
+          path: 'country/:id',
           loadChildren: () => import('./views/country/country.module').then(m => m.CountryModule)
+        },
+        {
+          path: '**',
+          pathMatch: 'full',
+          redirectTo: ''
         }
       ],
       { initialNavigation: 'enabled' })

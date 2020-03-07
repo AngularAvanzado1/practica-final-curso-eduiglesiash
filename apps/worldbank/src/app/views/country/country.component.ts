@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { WorldbankService } from '@wb-data';
+import { Country } from '@wb-domain';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'wb-country',
@@ -7,9 +11,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CountryComponent implements OnInit {
 
-  constructor() { }
+  private idCountry: string;
+  public country$: Observable<Country>;
+
+  constructor(
+    private route: ActivatedRoute,
+    private wbService: WorldbankService
+  ) { }
 
   ngOnInit(): void {
+    this.idCountry = this.route.snapshot.paramMap.get('id');
+    this.country$ = this.wbService.getInfoCountry(this.idCountry)
   }
 
 }
