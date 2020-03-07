@@ -3,9 +3,7 @@
   <a [routerLink]="['/']">Go back to continental Region</a>
 </nav>
 <section>
-  <div *ngIf="infoRegion">
-    {{ infoRegion | json }}
-  </div>
+  <wb-ui-card-info *ngIf="infoRegion" [info]="infoRegion"></wb-ui-card-info>
   <div *ngIf="dataCountries$ | async as countries">
     <wb-ui-card-link *ngFor="let country of countries" [info]="country" [pathRoute]="'/country'"></wb-ui-card-link>
   </div>

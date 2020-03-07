@@ -1,4 +1,13 @@
 <article>
-  <p>Name: Nombre | id: 1</p>
-  <p>Code: ECS | iso2Code</p>
+  <span *ngIf="info.id">ID: {{ info.id}} </span> |
+  <span *ngIf="info.name"> name: {{ info.name }} </span>
+  <span *ngIf="info.code">Code: {{ info.code}} </span> |
+  <span *ngIf="info.iso2Code"> Iso2code: {{ info.iso2Code }} </span>
+  <span *ngIf="info.iso2code"> Iso2code: {{ info.iso2code }} </span>
+  <span *ngIf="info.latitude"> Latitude: {{ info.latitude }} </span>
+  <span *ngIf="info.longitude"> Longitude: {{ info.longitude }} </span>
+  <wb-ui-accordion *ngIf="info.region" [data]="info.region" [title]="'Region'"></wb-ui-accordion>
+  <wb-ui-accordion *ngIf="info.adminregion" [data]="info.adminregion" [title]="'Admin Region'"></wb-ui-accordion>
+  <wb-ui-accordion *ngIf="info.incomeLevel" [data]="info.incomeLevel" [title]="'Income Level'"></wb-ui-accordion>
+  <wb-ui-accordion *ngIf="info.lendingType" [data]="info.lendingType" [title]="'Lending Type'"></wb-ui-accordion>
 </article>

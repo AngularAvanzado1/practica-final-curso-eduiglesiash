@@ -1,0 +1,10 @@
+<h3 class="accordion" (click)="isVisibleAccordion(accordionState)">
+  <button class="accordion__btn" [ngClass]="{'accordion__btn--open' : accordionState}">{{ title }}</button>
+</h3>
+<div class="accordion__content accordion__visible" [ngClass]="{'accordion__visible' : accordionState}">
+  <ul>
+    <li> id:  {{ data.id }}</li>
+    <li> iso2code: {{ data.iso2code }}</li>
+    <li> value: {{ data.value }}</li>
+  </ul>
+</div>

@@ -2,6 +2,4 @@
   <a [routerLink]="['/']">Go to Continental Region</a>
 </nav>
 
-<div *ngIf="country$">
-  {{ country$ | async | json }}
-</div>
+<wb-ui-card-info *ngIf="country$ | async as country" [info]="country"></wb-ui-card-info>

@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { WorldbankService } from '@wb-data';
 import { Observable } from 'rxjs';
-import { Region, Regions } from '@wb-domain';
+import { Region } from '@wb-domain';
 
 @Component({
   selector: 'wb-continental-region',

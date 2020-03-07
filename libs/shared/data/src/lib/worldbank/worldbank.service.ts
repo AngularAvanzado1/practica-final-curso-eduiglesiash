@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { map, tap } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 import { Country, Region } from '@wb-domain';
 
 @Injectable({
@@ -59,7 +59,6 @@ export class WorldbankService {
         // @ts-ignore
         map(([metadata, country]) => {
           const copyInfoCountry: Country = country[0];
-          console.log(copyInfoCountry);
           return { ...copyInfoCountry };
         }),
 

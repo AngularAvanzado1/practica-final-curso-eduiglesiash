@@ -1,7 +1,7 @@
 import { MetaDataPage } from './metadata-page.interface';
 
 export interface Region {
-  code: string;
+  code?: string;
   iso2code: string;
   id?: string;
   name?: string;
