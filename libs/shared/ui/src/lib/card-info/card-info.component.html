@@ -1,7 +1,13 @@
 <article>
+  <nav *ngIf="info.region?.id">
+    <a [routerLink]="['/region',info.region.id]">
+      Go to Region {{info.region.value}}
+    </a>
+
+  </nav>
   <header>
-    <p *ngIf="info.id">{{ info.id}} |</p>
-    <span *ngIf="info.name">{{ info.name }} </span> |
+    <span *ngIf="info.id">{{ info.id}} | </span>
+    <span *ngIf="info.name" class="info__name">{{ info.name }} </span> |
     <span *ngIf="info.code">{{ info.code}} |</span>
     <span *ngIf="info.iso2Code"> Iso2code: {{ info.iso2Code }} </span>
     <span *ngIf="info.iso2code"> Iso2code: {{ info.iso2code }} </span>

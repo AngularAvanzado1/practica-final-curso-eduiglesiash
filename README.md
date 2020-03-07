@@ -17,19 +17,19 @@ Explorar la información abierta y disponible en el [API del Banco Mundial](http
 
 ### Página para una región continental [WIP]
 
-- [ WIP ] Ver los datos básicos del continente y los países pertenecientes.
+- [ DONE ] Ver los datos básicos del continente y los países pertenecientes.
 
 - [ DONE ] A partir de : http://api.worldbank.org/v2/es/region/ECS/country?per_page=1000&format=json
 
-- Navegar hacia la página de un país: `country/:id`
+- [ DONE ] Navegar hacia la página de un país: `country/:id`
 
 ### Página para un país [WIP]
 
-- Ver los datos básicos de un país
+- [ DONE ]Ver los datos básicos de un país
 
-- A partir de : http://api.worldbank.org/V2/es/country/ESP?format=json
+- [ DONE ]A partir de : http://api.worldbank.org/V2/es/country/ESP?format=json
 
-- Navegar hacia su región continental : `region/:code`
+- [ DONE ] Navegar hacia su región continental : `region/:code`
 
 ---
 
