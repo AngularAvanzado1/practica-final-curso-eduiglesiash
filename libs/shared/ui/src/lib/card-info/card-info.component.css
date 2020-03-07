@@ -1,0 +1,9 @@
+header {
+  box-sizing: border-box;
+  padding: 16px;
+  margin-bottom: 8px;
+}
+.info__name {
+  font-weight: bold;
+  font-size: 28px;
+}
