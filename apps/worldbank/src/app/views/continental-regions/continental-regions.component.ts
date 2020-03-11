@@ -11,6 +11,7 @@ import { Region } from '@wb-domain';
 export class ContinentalRegionsComponent implements OnInit {
 
   public regions$: Observable<Region[]>;
+  public title = 'Continental Regions';
 
   constructor(
     private wbService: WorldbankService,

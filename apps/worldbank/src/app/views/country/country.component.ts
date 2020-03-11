@@ -11,8 +11,10 @@ import { Observable } from 'rxjs';
 })
 export class CountryComponent implements OnInit {
 
+  public title = 'Country: ';
   private idCountry: string;
   public country$: Observable<Country>;
+
 
   constructor(
     private route: ActivatedRoute,

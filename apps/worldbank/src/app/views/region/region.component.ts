@@ -12,6 +12,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class RegionComponent implements OnInit, OnDestroy {
 
+  public title = 'Region';
   public idRegion: string;
   public dataCountries$: Observable<any>;
   public infoRegion: Region;
