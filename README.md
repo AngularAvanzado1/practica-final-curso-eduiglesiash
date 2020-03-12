@@ -41,7 +41,7 @@ Explorar la información abierta y disponible en el [API del Banco Mundial](http
 
 - [ DONE ] AL menos una aplicación y una librería
 
-- Testing unitario de al menos un componente y un servicio
+- [ DONE ] Testing unitario de al menos un componente y un servicio
 
 - Testing _e2e_ de una página
 

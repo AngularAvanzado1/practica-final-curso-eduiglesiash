@@ -1,5 +1,5 @@
 import { async, TestBed } from '@angular/core/testing';
-import { DataModule } from './data.module';
+import { DataModule } from '@wb-data';
 
 describe('DataModule', () => {
   beforeEach(async(() => {

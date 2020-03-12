@@ -10,6 +10,7 @@
     "build": "ng build",
     "test": "ng test",
     "test:worldbank": "ng test worldbank --watch",
+    "test:lib:data": "ng test shared-data --watch",
     "lint": "nx workspace-lint && ng lint",
     "e2e": "ng e2e",
     "affected:apps": "nx affected:apps",
