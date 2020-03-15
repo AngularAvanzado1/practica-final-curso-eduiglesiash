@@ -12,7 +12,6 @@
     "build:worldbank": "ng build worldbank --prod",
     "test": "ng test",
     "test:worldbank": "ng test worldbank --watch",
-    "test:lib:data": "ng test shared-data --watch",
     "i18n:worldbank": "ng xi18n worldbank --output-path src/locale",
     "build:worldbank-es": "ng build worldbank --configuration=production-es",
     "start:worldbank-es": "npm run build:worldbank-es && angular-http-server --open -p 8082 --path ./dist/apps/git worldbank/es",
