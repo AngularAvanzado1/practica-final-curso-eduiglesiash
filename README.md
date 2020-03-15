@@ -55,7 +55,7 @@ Explorar la información abierta y disponible en el [API del Banco Mundial](http
 
 - [ DONE ] Características **_PWA_**
 
-- Traducible
+- [DONE] Traducible
 
 ## Extra
 
@@ -64,12 +64,3 @@ Explorar la información abierta y disponible en el [API del Banco Mundial](http
 - Un _**WebComponent**_ con datos de un según su código. `<wbde-country id="ESP"></wbde-country>`
 
 - Una aplicación web estándar (sin Angular) que use el anterior componente.
-
-
-## TODO's
-
-[x] - Crear los interfaces de las continental-regions 
-[] - Crear los interfaces de los paises para mostrar
-[] - Crear las card de los paises como una librería compartida para poder usarla. 
-[] - Importar y ejecutar este componente. 
-[] - Generar el nuevo método para está nueva petición

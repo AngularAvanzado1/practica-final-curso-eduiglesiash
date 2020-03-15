@@ -14,10 +14,6 @@
     <span *ngIf="info.longitude"> Longitude: {{ info.longitude }} </span>
   </header>
 
-  <!--
-      TODO: Esto no me gusta así, sería más interensante hacer una lógica de cada uno de ellos para poder iterarlo,
-            hay que jugar con los objetos
-  -->
   <wb-ui-accordion *ngIf="info.region" [data]="info.region" [title]="'Region'"></wb-ui-accordion>
   <wb-ui-accordion *ngIf="info.adminregion" [data]="info.adminregion" [title]="'Admin Region'"></wb-ui-accordion>
   <wb-ui-accordion *ngIf="info.incomeLevel" [data]="info.incomeLevel" [title]="'Income Level'"></wb-ui-accordion>
