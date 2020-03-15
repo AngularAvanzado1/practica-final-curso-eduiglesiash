@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Country } from '@wb-domain';
 
 @Component({
@@ -9,6 +9,8 @@ import { Country } from '@wb-domain';
 export class CardInfoComponent{
 
   @Input() public info: Country;
+  @Input() public idRegion: string;
+  constructor(
+  ) { }
 
-  constructor() { }
 }

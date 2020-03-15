@@ -1,33 +1,40 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
-import { DataModule } from '@wb-data';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
+import { routerReducer, RouterState, StoreRouterConnectingModule } from '@ngrx/router-store';
+import * as fromInfoWorldBank from './store/info-world-bank/info-world-bank.reducer';
+import { InfoWorldBankEffects } from './store/info-world-bank/info-world-bank.effects';
+import { HttpClientModule } from '@angular/common/http';
 
-
-const MyModules = [
-  DataModule
-];
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
-    ...MyModules,
+    HttpClientModule,
     BrowserModule,
-    RouterModule.forRoot([
-
+    RouterModule.forRoot(
+      [
         {
           path: '',
-          loadChildren: () => import('./views/continental-regions/continental-regions.module').then(m => m.ContinentalRegionsModule)
+          loadChildren: () =>
+            import(
+              './views/continental-regions/continental-regions.module'
+              ).then(m => m.ContinentalRegionsModule)
         },
         {
           path: 'region/:id',
-          loadChildren: () => import('./views/region/region.module').then(m => m.RegionModule)
+          loadChildren: () =>
+            import('./views/region/region.module').then(m => m.RegionModule)
         },
         {
           path: 'country/:id',
-          loadChildren: () => import('./views/country/country.module').then(m => m.CountryModule)
+          loadChildren: () =>
+            import('./views/country/country.module').then(m => m.CountryModule)
         },
         {
           path: '**',
@@ -35,7 +42,25 @@ const MyModules = [
           redirectTo: ''
         }
       ],
-      { initialNavigation: 'enabled' })
+      { initialNavigation: 'enabled' }
+    ),
+    StoreModule.forRoot(
+      {
+        routerNav: routerReducer,
+      },
+      {
+        metaReducers: !environment.production ? [] : [],
+        runtimeChecks: {
+          strictActionImmutability: true,
+          strictStateImmutability: true
+        }
+      }
+    ),
+    EffectsModule.forRoot([]),
+    !environment.production ? StoreDevtoolsModule.instrument() : [],
+    StoreRouterConnectingModule.forRoot({ routerState: RouterState.Minimal }),
+    StoreModule.forFeature(fromInfoWorldBank.infoWorldBankFeatureKey, fromInfoWorldBank.reducer),
+    EffectsModule.forFeature([InfoWorldBankEffects])
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { WorldbankService } from '@wb-data';
 import { Observable } from 'rxjs';
 import { Region } from '@wb-domain';
+import { InfoWorldBankService } from '../../store/info-world-bank/info-world-bank.service';
 
 @Component({
   selector: 'wb-continental-region',
@@ -14,12 +14,12 @@ export class ContinentalRegionsComponent implements OnInit {
   public title = 'Continental Regions';
 
   constructor(
-    private wbService: WorldbankService,
+    private infoWBservice: InfoWorldBankService
   ) {
   }
 
   ngOnInit() {
-    this.regions$ = this.wbService.getRegions();
+    this.infoWBservice.loadRegions();
+    this.regions$ = this.infoWBservice.getRegions();
   }
-
 }

@@ -1,8 +1,8 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Region } from '@wb-domain';
-import { WorldbankService } from '@wb-data';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Country, Region } from '@wb-domain';
 import { Observable } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
+import { InfoWorldBankService } from '../../store/info-world-bank/info-world-bank.service';
 
 
 @Component({
@@ -12,28 +12,31 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class RegionComponent implements OnInit, OnDestroy {
 
-  public title = 'Region';
+  public title = 'Region: ';
   public idRegion: string;
-  public dataCountries$: Observable<any>;
+  public dataCountries$: Observable<Country[]>;
   public infoRegion: Region;
   public infoRegion$: any;
 
   constructor(
     private route: ActivatedRoute,
-    private wbService: WorldbankService
+    private wbService: InfoWorldBankService
   ) {
   }
 
   ngOnInit(): void {
     this.idRegion = this.route.snapshot.paramMap.get('id');
+    // this.wbService.loadListCountries(this.idRegion);
     this.infoRegion$ = this.wbService.getInfoRegion(this.idRegion)
-      .subscribe((info: Region) => {
-        this.infoRegion = info;
-        this.dataCountries$ = this.wbService.getCountries(info.code);
+      .subscribe(data => {
+        this.infoRegion = data;
+        this.wbService.loadListCountries(data.code, this.idRegion);
       });
+    this.dataCountries$ = this.wbService.getCountries();
   }
 
-  ngOnDestroy(){
+  ngOnDestroy() {
     this.infoRegion$.unsubscribe();
   }
+
 }

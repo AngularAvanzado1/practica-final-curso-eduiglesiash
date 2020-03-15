@@ -43,7 +43,7 @@ Explorar la información abierta y disponible en el [API del Banco Mundial](http
 
 - [ DONE ] Testing unitario de al menos un componente y un servicio
 
-- Testing _e2e_ de una página
+- [ DONE ] Testing _e2e_ de una página
 
 - [ DONE ] Uso de la estrategia de detección de cambios **_OnPush_**.
 
@@ -51,7 +51,7 @@ Explorar la información abierta y disponible en el [API del Banco Mundial](http
 
 ## Plus
 
-- Almacén centralizado del estado mediante **_NgRx_**.
+- [ DONE ] Almacén centralizado del estado mediante **_NgRx_**.
 
 - Características **_PWA_**
 

@@ -1,4 +1,6 @@
+<ng-container *ngIf="country$ | async as country">
+  <h2>{{ title }}{{ country.name }}</h2>
+  <wb-ui-card-info  [info]="country" [idRegion]="idRegion"></wb-ui-card-info>
+</ng-container>
 
-<h2>{{ title }}</h2>
-<wb-ui-card-info *ngIf="country$ | async as country" [info]="country"></wb-ui-card-info>
 
