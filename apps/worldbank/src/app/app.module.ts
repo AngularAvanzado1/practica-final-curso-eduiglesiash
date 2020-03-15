@@ -10,6 +10,7 @@ import { routerReducer, RouterState, StoreRouterConnectingModule } from '@ngrx/r
 import * as fromInfoWorldBank from './store/info-world-bank/info-world-bank.reducer';
 import { InfoWorldBankEffects } from './store/info-world-bank/info-world-bank.effects';
 import { HttpClientModule } from '@angular/common/http';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 
 @NgModule({
@@ -60,7 +61,8 @@ import { HttpClientModule } from '@angular/common/http';
     !environment.production ? StoreDevtoolsModule.instrument() : [],
     StoreRouterConnectingModule.forRoot({ routerState: RouterState.Minimal }),
     StoreModule.forFeature(fromInfoWorldBank.infoWorldBankFeatureKey, fromInfoWorldBank.reducer),
-    EffectsModule.forFeature([InfoWorldBankEffects])
+    EffectsModule.forFeature([InfoWorldBankEffects]),
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]
