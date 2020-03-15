@@ -2,8 +2,15 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CountryComponent } from './country.component';
 import { RouterTestingModule } from '@angular/router/testing';
-import { DataModule } from '@wb-data';
 import { UiModule } from '@wb-ui';
+import { StoreModule } from '@ngrx/store';
+import { routerReducer, RouterState, StoreRouterConnectingModule } from '@ngrx/router-store';
+import { environment } from '../../../environments/environment';
+import { EffectsModule } from '@ngrx/effects';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import * as fromInfoWorldBank from '../../store/info-world-bank/info-world-bank.reducer';
+import { InfoWorldBankEffects } from '../../store/info-world-bank/info-world-bank.effects';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('CountryComponent', () => {
 
@@ -12,7 +19,28 @@ describe('CountryComponent', () => {
 
     beforeEach(async(() => {
       TestBed.configureTestingModule({
-        imports: [RouterTestingModule, DataModule, UiModule],
+        imports: [
+          RouterTestingModule,
+          UiModule,
+          HttpClientTestingModule,
+          RouterTestingModule,
+          StoreModule.forRoot(
+            {
+              routerNav: routerReducer,
+            },
+            {
+              metaReducers: !environment.production ? [] : [],
+              runtimeChecks: {
+                strictActionImmutability: true,
+                strictStateImmutability: true
+              }
+            }
+          ),
+          EffectsModule.forRoot([]),
+          !environment.production ? StoreDevtoolsModule.instrument() : [],
+          StoreRouterConnectingModule.forRoot({ routerState: RouterState.Minimal }),
+          StoreModule.forFeature(fromInfoWorldBank.infoWorldBankFeatureKey, fromInfoWorldBank.reducer),
+          EffectsModule.forFeature([InfoWorldBankEffects])],
         declarations: [CountryComponent]
       })
         .compileComponents();

@@ -11,7 +11,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/apps/worldbank",
+            "outputPath": "dist/browser",
             "index": "apps/worldbank/src/index.html",
             "main": "apps/worldbank/src/main.ts",
             "polyfills": "apps/worldbank/src/polyfills.ts",
@@ -22,7 +22,9 @@
               "apps/worldbank/src/assets",
               "apps/worldbank/src/manifest.webmanifest"
             ],
-            "styles": ["apps/worldbank/src/styles.css"],
+            "styles": [
+              "apps/worldbank/src/styles.css"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -92,6 +94,29 @@
             "tsConfig": "apps/worldbank/tsconfig.spec.json",
             "passWithNoTests": true,
             "setupFile": "apps/worldbank/src/test-setup.ts"
+          }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/server",
+            "main": "apps/worldbank/src/main.server.ts",
+            "tsConfig": "apps/worldbank/tsconfig.server.json"
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/worldbank/src/environments/environment.ts",
+                  "with": "apps/worldbank/src/environments/environment.prod.ts"
+                }
+              ],
+              "sourceMap": false,
+              "optimization": {
+                "scripts": false,
+                "styles": true
+              }
+            }
           }
         }
       }

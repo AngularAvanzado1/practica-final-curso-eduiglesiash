@@ -53,13 +53,13 @@ Explorar la información abierta y disponible en el [API del Banco Mundial](http
 
 - [ DONE ] Almacén centralizado del estado mediante **_NgRx_**.
 
-- Características **_PWA_**
+- [ DONE ] Características **_PWA_**
 
 - Traducible
 
 ## Extra
 
-- Una landing page _SEO friendly_ generada con **_SSR_** que muestre la lista de continentes.
+- [ DONE ] Una landing page _SEO friendly_ generada con **_SSR_** que muestre la lista de continentes.
 
 - Un _**WebComponent**_ con datos de un según su código. `<wbde-country id="ESP"></wbde-country>`
 
